@@ -24,6 +24,22 @@ This project uses ESP32 UART2 on the following pins:
 
 Connect the ESP32 UART pins to a second device or another ESP32 running the same project. For a typical loopback or two-board test, cross-connect the TX and RX lines between the devices.
 
+## Example wiring diagram
+
+This setup powers both boards from one USB cable connected to just one device, while the other board is powered through the shared VIN and GND connection.
+
+![ESP32 UART wiring example](/docs/images/esp32-uart-wiring.jpg)
+
+### Wiring description
+
+- One USB cable is connected to only one ESP32 board
+- The `VIN` line from that powered board is connected to the other board's `VIN`
+- The ground lines are connected together
+- Blue wire: `D16 (SENDER RX)` to `D17 (ECHO TX)`
+- Yellow wire: `D17 (SENDER TX)` to `D16 (ECHO RX)`
+
+This creates a direct UART connection between the sender and echo device while sharing the same power source.
+
 ## Runtime roles
 
 The role is selected in the project configuration menu:
