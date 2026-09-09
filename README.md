@@ -35,8 +35,8 @@ This setup powers both boards from one USB cable connected to just one device, w
 - One USB cable is connected to only one ESP32 board
 - The `VIN` line from that powered board is connected to the other board's `VIN`
 - The ground lines are connected together
-- Blue wire: `D16 (SENDER RX)` to `D17 (ECHO TX)`
-- Yellow wire: `D17 (SENDER TX)` to `D16 (ECHO RX)`
+- Short blue wire: `D16 (SENDER RX)` to `D17 (ECHO TX)`
+- Short yellow wire: `D17 (SENDER TX)` to `D16 (ECHO RX)`
 
 This creates a direct UART connection between the sender and echo device while sharing the same power source.
 
