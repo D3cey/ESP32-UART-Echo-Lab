@@ -1,0 +1,16 @@
+menu "Device Role Configuration"
+
+    choice DEVICE_ROLE
+        prompt "Select Device Role"
+        default ROLE_ECHO
+        help
+            Choose whether this board runs as the periodic PING sender or the UART echo responder.
+
+        config ROLE_SENDER
+            bool "UART Sender (Master)"
+
+        config ROLE_ECHO
+            bool "UART Echo (Slave)"
+    endchoice
+
+endmenu
